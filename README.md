@@ -23,3 +23,5 @@ To run your tests
 - Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
 
 [Challenge01](./python/code_challenges/challenge01/README.md)
+
+[Challenge02](./python/code_challenges/challenge02/README.md)
