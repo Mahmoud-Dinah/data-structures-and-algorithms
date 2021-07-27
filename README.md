@@ -25,3 +25,5 @@ To run your tests
 [Challenge01](./python/code_challenges/challenge01/README.md)
 
 [Challenge02](./python/code_challenges/challenge02/README.md)
+
+[Challenge03](./python/code_challenges/challenge03/README.md)
