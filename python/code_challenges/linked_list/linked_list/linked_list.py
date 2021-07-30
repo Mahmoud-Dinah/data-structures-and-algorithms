@@ -44,15 +44,15 @@ class LinkedList:
             if current.next is None:
                 output += f"( {value} ) -> NULL"
                 break
-            output = output + f"( {value} ) -> "
+            output += f"( {value} ) -> "
             current=current.next
         return output
 
 if __name__ == "__main__":
-    new = LinkedList()
-    new.insert(1)
-    new.insert(2)
-    new.insert(3)
-    new.insert(4)
-    new.insert(5)
+    new =LinkedList()
+    new.insert('Mahmoud')
+    new.insert('is')
+    new.insert('name')
+    new.insert('my')
+    actual = new.__str__()
     print(new.__str__())
