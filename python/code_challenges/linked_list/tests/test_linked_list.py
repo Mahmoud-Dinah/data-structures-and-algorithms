@@ -62,6 +62,7 @@ def test_includes_False():
 
 
 def test_return_all_value():
+    # test 7 -- test return all value
     new =LinkedList()
     new.insert('Mahmoud')
     new.insert('is')
