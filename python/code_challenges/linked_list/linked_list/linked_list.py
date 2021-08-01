@@ -8,7 +8,6 @@ class LinkedList:
         self.head = None
 
     def insert(self, value='null'):
-        try:
           node = Node(value)
           if not self.head:
               self.head = node
@@ -16,11 +15,9 @@ class LinkedList:
               current = self.head
               self.head= node
               self.head.next=current
-        except Exception as e:
-          raise Exception(f"error happend : {e}")
 
     def includes(self,num):
-        try:
+
           x=False
 
           current = self.head
@@ -31,8 +28,45 @@ class LinkedList:
                   break
               current=current.next
           return x
-        except Exception as e:
-          raise Exception(f"error happend : {e}")
+
+    def append(self, value):
+
+        new_node=Node(value)
+        if self.head is None:
+          self.head = new_node
+          return
+        last = self.head
+        while (last.next):
+            last = last.next
+
+        last.next =  new_node
+
+
+    def insert_before(self ,value, new_data):
+
+        current = self.head
+        if current.value==value:
+            self.insert(new_data)
+        else:
+          while current:
+             if current.next.value==value :
+                nextvalue=current.next
+                current.next=Node(new_data)
+                current.next.next=nextvalue
+                break
+             current=current.next
+
+    def insert_after(self, value, new_data):
+
+        current = self.head
+        while current:
+
+            if current.value==value :
+                nextvalue=current.next
+                current.next=Node(new_data)
+                current.next.next=nextvalue
+                break
+            current=current.next
 
 
 
@@ -49,10 +83,8 @@ class LinkedList:
         return output
 
 if __name__ == "__main__":
-    new =LinkedList()
-    new.insert('Mahmoud')
-    new.insert('is')
-    new.insert('name')
-    new.insert('my')
-    actual = new.__str__()
-    print(new.__str__())
+     after=LinkedList()
+     after.append(10)
+     after.append(20)
+     after.insert_after(10,0)
+     print(after.__str__())
