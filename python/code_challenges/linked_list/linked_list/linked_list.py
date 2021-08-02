@@ -83,32 +83,35 @@ class LinkedList:
         return output
 
     def kth_from_end(self, k):
-        if type(k)!=type(5):
-            return 'please enter input'
-        if k < 0:
-            return 'please enter even number '
-        output=[]
+        if k<0:
+            print("please enter positive number ")
+        value=[]
         current = self.head
         while current:
-            output=[current.value]
-
-            current=current.next
+            value = value + [current.value]
+            current = current.next
         if k == 0:
-         return output[-1]
+            print(value[-1])
         else:
-         if k>len(output):
-             return 'error'
-        return output[(k*-1)-1]
+            if k > len(value):
+                print("exception")
+            print(value[(k*-1)-1])
 
 if __name__ == "__main__":
-     after=LinkedList()
-     after.append(10)
-     after.append(20)
-     after.append(30)
-     after.append(40)
-     after.append(50)
-     after.append(70)
-     after.append(80)
-     print(after.__str__())
-     print(after.kth_from_end(2))
-     print(after.__str__())
+    test=LinkedList()
+    test.insert(1)
+    test.insert(3)
+    test.insert(8)
+    test.insert(2)
+    test.insert(2)
+    test.insert(2)
+    test.insert(2)
+    test.insert(2)
+    test.insert(2)
+    test.insert(2)
+    test.insert(2)
+
+
+    test.kth_from_end(22)
+    actual=test.__str__()
+

@@ -121,3 +121,59 @@ def test_insert_after_last_node():
     actual=new.__str__()
     expected='( 600 ) -> ( 700 ) -> ( 800 ) -> NULL'
     assert actual==expected
+
+def test_k_is_greater_than_the_length():
+    test=LinkedList()
+    test.insert(1)
+    test.insert(3)
+    test.insert(8)
+    test.insert(2)
+
+    test.kth_from_end(5)
+    actual=test.__str__()
+    expected="exception"
+    assert actual==expected
+
+
+def test_k_ths_same_of_length():
+    test=LinkedList()
+    test.append(1)
+    test.append(3)
+    test.append(8)
+    test.kth_from_end(3)
+    actual=test.__str__()
+    expected='( 8 ) -> ( 3 ) -> ( 1 ) -> NULL'
+    assert actual==expected
+
+
+def test_not_a_positive_integer():
+    test=LinkedList()
+    test.insert(1)
+    test.insert(8)
+    test.insert(2)
+    test.kth_from_end(-1)
+    actual=test.__str__()
+    expected='( 2 ) -> ( 8 ) -> ( 1 ) -> NULL'
+    assert actual==expected
+
+def test_linked_list_is_of_a_size_1():
+    test=LinkedList()
+    test.insert(1)
+    test.insert(8)
+    test.insert(2)
+    test.kth_from_end(1)
+    actual=test.__str__()
+    expected='( 2 ) -> ( 8 ) -> ( 1 ) -> NULL'
+    assert actual==expected
+
+
+def test_in_the_middle():
+    test=LinkedList()
+    test.insert(1)
+    test.insert(8)
+    test.insert(2)
+    test.insert(5)
+    test.kth_from_end(2)
+    actual=test.__str__()
+    expected='( 5 ) -> ( 2 ) -> ( 8 ) -> ( 1 ) -> NULL'
+    assert actual==expected
