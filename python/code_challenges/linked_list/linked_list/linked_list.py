@@ -110,5 +110,5 @@ if __name__ == "__main__":
      after.append(70)
      after.append(80)
      print(after.__str__())
-     print(after.kth_from_end(0))
+     print(after.kth_from_end(2))
      print(after.__str__())
