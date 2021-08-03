@@ -22,9 +22,9 @@ def test_insert():
 
 def test_head_value():
     # test 3 -- test head value
-    ahmad = LinkedList()
-    ahmad.insert(7)
-    actual=ahmad.head.value
+    new = LinkedList()
+    new.insert(7)
+    actual=new.head.value
     expected= 7
     assert actual==expected
 
@@ -177,3 +177,5 @@ def test_in_the_middle():
     actual=test.__str__()
     expected='( 5 ) -> ( 2 ) -> ( 8 ) -> ( 1 ) -> NULL'
     assert actual==expected
+
+
