@@ -7,6 +7,6 @@ PR LINK: https://github.com/Mahmoud-Dinah/data-structures-and-algorithms/pull/21
 ## LAB 08:
 ### linked-list-zip
 
-PR LINK :
+PR LINK : https://github.com/Mahmoud-Dinah/data-structures-and-algorithms/pull/21
 
 ![Challenge 08 - list-zip](linked-list-zip.PNG)
