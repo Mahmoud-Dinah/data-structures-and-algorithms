@@ -26,18 +26,66 @@ class Stack:
             raise Exception("called on empty stack")
         return self.top.value
 
+class Queue:
+    def __init__(self):
+        self.front = None
+        self.rare = None
+
+    def enqueue(self,value):
+        node = Node(value)
+        if not self.rare:
+            self.front = node
+            self.rare = node
+        else:
+            self.rare.next = node
+            self.rare = node
+
+    def dequeue(self):
+        temp = self.front
+        self.front = self.front.next
+        self.rare = self.rare.next
+        temp.next = None
+        return temp.value
+
+    def is_empty(self):
+        return  not (self.front and self.rare)
+
+    def peek():
+        pass
+
 
 
 
 if __name__ == "__main__":
-    stack = Stack()
-    stack.push(1)
-    stack.push(2)
-    stack.push(3)
+#######################################
+############ Stack testing ############
+#######################################
+    # stack = Stack()
+    # stack.push(1)
+    # stack.push(2)
+    # stack.push(3)
+    # stack.pop()
+    # stack.pop()
+    # # stack.pop()
+    # # stack.peek()
+    # print(stack.top.value)
 
-    stack.pop()
-    stack.pop()
-    stack.pop()
+#######################################
+############ Queue testing ############
+#######################################
+    queue = Queue()
+    # queue.enqueue(1)
+    # queue.enqueue(2)
+    # queue.enqueue(3)
+    # print(queue.front.value)
+    # print(queue.rare.value)
+    # print(queue.is_empty())
 
-    # stack.peek()
-    print(stack.top.value)
+    queue.enqueue(1)
+    queue.enqueue(2)
+    queue.enqueue(3)
+    queue.dequeue()
+    queue.dequeue()
+    queue.dequeue()
+    print(queue.front.value)
+    print(queue.rare.value)

@@ -1,5 +1,5 @@
 import pytest
-from stack_and_queue.stack_and_queue import Node, Stack
+from stack_and_queue.stack_and_queue import *
 
 def test_push_one_value():
     stack = Stack()
@@ -48,12 +48,33 @@ def test_peek_the_next_item_on_the_stack():
     stack.pop()
     assert stack.peek() == 1
 
-def test_exp():
+def test_stack_exception():
     with pytest.raises(Exception):
      stack = Stack()
      stack.push(2)
      stack.push(3)
      stack.pop()
      stack.pop()
-     assert stack.peek() == "called on empty stack"
+     assert stack.peek()
+
+def test_queue_into_queue():
+     queue = Queue()
+     queue.enqueue(1)
+     assert queue.front.value == 1
+     assert queue.rare.value == 1
+
+def test_multiple_enqueue_into_queue():
+     queue = Queue()
+     queue.enqueue(1)
+     queue.enqueue(2)
+     queue.enqueue(3)
+     assert queue.front.value == 1
+     assert queue.rare.value == 3
+
+def test_dequeue_out_of_queue():
+     queue = Queue()
+     queue.enqueue(1)
+     queue.dequeue()
+     assert queue.front == None
+     assert queue.rare == None
 
