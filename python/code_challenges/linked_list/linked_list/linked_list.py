@@ -91,11 +91,13 @@ class LinkedList:
             value = value + [current.value]
             current = current.next
         if k == 0:
-            print(value[-1])
+            return 'error'
         else:
-            if k > len(value):
-                print("exception")
-            print(value[(k*-1)-1])
+            if k >=len(value):
+               raise Exception("exception")
+            else:
+                print(value[(k*-1)-1])
+
 
 if __name__ == "__main__":
     test=LinkedList()
@@ -103,15 +105,5 @@ if __name__ == "__main__":
     test.insert(3)
     test.insert(8)
     test.insert(2)
-    test.insert(2)
-    test.insert(2)
-    test.insert(2)
-    test.insert(2)
-    test.insert(2)
-    test.insert(2)
-    test.insert(2)
-
-
-    test.kth_from_end(22)
-    actual=test.__str__()
-
+    test.kth_from_end(2)
+    print(test.__str__())

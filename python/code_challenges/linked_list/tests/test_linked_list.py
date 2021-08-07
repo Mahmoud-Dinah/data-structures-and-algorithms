@@ -3,6 +3,8 @@ from linked_list.linked_list import (
     Node,
     LinkedList,
 )
+import pytest
+
 
 def test_instantiate_empty_linked_list():
     # test 1 -- empty linked list
@@ -123,26 +125,27 @@ def test_insert_after_last_node():
     assert actual==expected
 
 def test_k_is_greater_than_the_length():
-    test=LinkedList()
-    test.insert(1)
-    test.insert(3)
-    test.insert(8)
-    test.insert(2)
-
-    test.kth_from_end(5)
-    actual=test.__str__()
-    expected="exception"
-    assert actual==expected
+    with pytest.raises(Exception):
+     test=LinkedList()
+     test.insert(1)
+     test.insert(3)
+     test.insert(8)
+     test.insert(2)
+     test.kth_from_end(5)
+     actual=test.__str__()
+     expected="exception"
+     assert actual==expected
 
 
 def test_k_ths_same_of_length():
+   with pytest.raises(Exception):
     test=LinkedList()
     test.append(1)
     test.append(3)
     test.append(8)
     test.kth_from_end(3)
     actual=test.__str__()
-    expected='( 8 ) -> ( 3 ) -> ( 1 ) -> NULL'
+    expected='exception'
     assert actual==expected
 
 
