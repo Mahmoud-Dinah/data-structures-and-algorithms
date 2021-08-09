@@ -76,5 +76,32 @@ def test_dequeue_out_of_queue():
      queue.enqueue(1)
      queue.dequeue()
      assert queue.front == None
-     assert queue.rare == None
 
+
+def test_peek_into_a_queue():
+     queue = Queue()
+     queue.enqueue(1)
+     assert queue.peek() == 1
+
+
+def test_empty_queue_after_dequeues():
+     queue = Queue()
+     queue.enqueue(1)
+     queue.enqueue(2)
+     queue.enqueue(3)
+     queue.dequeue()
+     queue.dequeue()
+     queue.dequeue()
+
+     assert queue.front == None
+
+
+def test_instantiate_empty_queue():
+    queue = Queue()
+    assert queue.is_empty() == True
+
+
+def test_peek_into_a_empty_queue_raise_expection():
+    with pytest.raises(Exception):
+     queue = Queue()
+     assert queue.peek() == True
