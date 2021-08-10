@@ -43,15 +43,17 @@ class Queue:
     def dequeue(self):
         temp = self.front
         self.front = self.front.next
-        self.rare = self.rare.next
         temp.next = None
         return temp.value
 
     def is_empty(self):
         return  not (self.front and self.rare)
 
-    def peek():
-        pass
+    def peek(self):
+     if self.is_empty():
+         raise Exception('empty queue')
+     else:
+        return self.front.value
 
 
 
