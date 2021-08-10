@@ -1,6 +1,7 @@
 import pytest
 from stack_and_queue.stack_and_queue import *
 
+
 def test_push_one_value():
     stack = Stack()
     stack.push(2)
