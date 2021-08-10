@@ -41,7 +41,7 @@ https://github.com/Mahmoud-Dinah/data-structures-and-algorithms/pull/28
 
 ## Whiteboard Process:
 
-![0](./fifo_animal_shelter.png)
+![AnimmalShelter](animalshelter.PNG)
 
 ## Approach & Efficiency:
 
