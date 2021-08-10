@@ -27,8 +27,9 @@ is_empty(): return True or False depends on stack if empty or not
 
 Peek(): will return the top value, if there is no value it will raise an exception
 
+--------------------------------------------------------------------------------------------------------------------------
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------ animal-shelter -------------------------------------------------------------
+# Animalshelter
 
 # Challenge Summary:
 
@@ -53,3 +54,23 @@ time O(1)
 space O(1)
 
 
+----------------------------------------
+
+# validate brackets
+
+## Challenge:
+
+Write a function called validate brackets
+
+Arguments: string
+
+Return: boolean
+
+representing whether or not the brackets in the string are balanced
+
+
+## ## PR Link:
+
+![brackets](brackets.PNG)
+
+## Whiteboard Process:
