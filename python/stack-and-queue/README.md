@@ -71,6 +71,9 @@ representing whether or not the brackets in the string are balanced
 
 ## ## PR Link:
 
+https://github.com/Mahmoud-Dinah/data-structures-and-algorithms/pull/29
+
+
 ![brackets](brackets.PNG)
 
 ## Whiteboard Process:
