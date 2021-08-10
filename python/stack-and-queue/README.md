@@ -27,6 +27,7 @@ is_empty(): return True or False depends on stack if empty or not
 
 Peek(): will return the top value, if there is no value it will raise an exception
 
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- animal-shelter -------------------------------------------------------------
 
 # Challenge Summary:
@@ -50,4 +51,5 @@ Big(O)
 time O(1)
 
 space O(1)
+
 
