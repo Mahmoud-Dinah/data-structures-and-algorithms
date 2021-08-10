@@ -41,6 +41,8 @@ class Pseudo_queue:
             self.front.push(self.rear.pop())
         return dequeueitem
 
+
+
 def __str__(self):
         current=self.front.top
         new =''
@@ -55,10 +57,8 @@ def __str__(self):
 
 if __name__ == "__main__":
     new = Pseudo_queue()
-    new.enqueue(20)
-    new.enqueue(15)
-    new.enqueue(10)
-    new.enqueue(5)
-    new.dequeue()
+    new.enqueue(1)
+    new.enqueue(2)
+    new.enqueue(3)
     print(new.__str__())
     print(new.front.top.value)

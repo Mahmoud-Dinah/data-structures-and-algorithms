@@ -26,3 +26,30 @@ Top: is the top of the stack
 is_empty(): return True or False depends on stack if empty or not
 
 Peek(): will return the top value, if there is no value it will raise an exception
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------- animal-shelter -------------------------------------------------------------
+
+# Challenge Summary:
+
+- Create a class called AnimalShelter which holds only dogs and cats.
+- The shelter operates using a first-in, first-out approach.
+
+## PR Link:
+
+https://github.com/Mahmoud-Dinah/data-structures-and-algorithms/pull/28
+
+
+## Whiteboard Process:
+
+![AnimmalShelter](animalshelter.PNG)
+
+## Approach & Efficiency:
+
+Big(O)
+
+time O(1)
+
+space O(1)
+
+
