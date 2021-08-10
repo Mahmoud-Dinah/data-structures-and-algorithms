@@ -61,10 +61,10 @@ class AnimalShelter:
             self.dog.enqueue(animal)
         else:
             return 'only cat or dog allowd'
-    def dequeue(self,input=None):
-        if input == 'cat':
+    def dequeue(self,pref=None):
+        if pref == 'cat':
             return self.cat.dequeue().name
-        elif input == 'dog':
+        elif pref == 'dog':
             return self.dog.dequeue().name
         else:
             return None

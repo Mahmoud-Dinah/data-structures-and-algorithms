@@ -34,12 +34,20 @@ Peek(): will return the top value, if there is no value it will raise an excepti
 - Create a class called AnimalShelter which holds only dogs and cats.
 - The shelter operates using a first-in, first-out approach.
 
+## PR Link:
+
+https://github.com/Mahmoud-Dinah/data-structures-and-algorithms/pull/28
+
+
 ## Whiteboard Process:
 
-
+![0](./fifo_animal_shelter.png)
 
 ## Approach & Efficiency:
 
-BigO n()
-BigO n()
+Big(O)
+
+time O(1)
+
+space O(1)
 
