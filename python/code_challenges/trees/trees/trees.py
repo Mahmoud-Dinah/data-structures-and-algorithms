@@ -15,4 +15,17 @@ class Binary_tree:
         if not self.root:
             return 'emoty tree'
 
+        def traversals(node):
+            nonlocal output
+            output += str(node.value)
+
+            if node.left:
+                traversals(node.left)
+
+            if node.right:
+                traverse(node.right)
+
+        traversals(self.root)
+        return output
+
 
