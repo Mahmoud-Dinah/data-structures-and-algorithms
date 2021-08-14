@@ -10,7 +10,7 @@ class BinaryTree:
         self.root = None
 
     def __str__(self):
-        return "Tree created"
+        return "tree instantiate"
 
     def print_tree(self, traversal):
         if traversal == "preorder":
