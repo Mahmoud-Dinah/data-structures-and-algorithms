@@ -44,7 +44,7 @@ class BinaryTree:
                 output += f"{str(start.value)}  "
             return output
 
-    def array_of_the_values(self):
+    def arr_of_values(self):
             max=0
             def inner_def(current):
                 nonlocal max
@@ -83,20 +83,38 @@ class BinarySearchTree(BinaryTree):
                         break
 
 if __name__ == "__main__":
-    tree = BinaryTree()
-    tree.root = Node(1)
-    tree.root.left = Node(2)
-    tree.root.left.left = Node(2)
-    tree.root.left.right = Node(3)
-    tree.root.left.right.left = Node(4)
-    tree.root.left.right.right = Node(12)
-    tree.root.right = Node(2)
-    tree.root.right.right = Node(1)
-    tree.root.right.right.right = Node(2)
-    tree.root.right.right.left = Node(5)
-    tree.root.right.right.left.left = Node(8)
-    tree.root.left.right.right.right = Node(4)
-    print(tree.root.left.value)
-    print(tree.print_tree("preorder"))
-    print(tree.print_tree("length"))
+    # tree = BinaryTree()
+    # tree.root = Node(1)
+    # tree.root.left = Node(2)
+    # tree.root.left.left = Node(2)
+    # tree.root.left.right = Node(3)
+    # tree.root.left.right.left = Node(4)
+    # tree.root.left.right.right = Node(12)
+    # tree.root.right = Node(2)
+    # tree.root.right.right = Node(1)
+    # tree.root.right.right.right = Node(2)
+    # tree.root.right.right.left = Node(5)
+    # tree.root.right.right.left.left = Node(8)
+    # tree.root.left.right.right.right = Node(4)
+    # print(tree.root.left.value)
+    # print(tree.print_tree("preorder"))
+    # print(tree.print_tree("length"))
 
+
+    # tree = BinarySearchTree()
+    # tree.Add(1)
+    # tree.Add(2)
+    # tree.Add(3)
+    # print(tree.print_tree("preorder"))
+
+    # print(tree.print_tree("inorder"))
+
+    # print(tree.print_tree("postorder"))
+
+    tree = BinarySearchTree()
+    tree.Add(2)
+    tree.Add(3)
+    tree.Add(1)
+    print(tree.root.value)
+    print(tree.root.left.value)
+    print(tree.root.right.value)
