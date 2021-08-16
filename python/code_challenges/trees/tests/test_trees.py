@@ -28,3 +28,15 @@ def test_return_collection_from_traversal():
     assert tree.print_tree("preorder") == "1  2  3  "
     assert tree.print_tree("inorder") == "1  2  3  "
     assert tree.print_tree("postorder") == "3  2  1  "
+
+def test_max_value():
+    tree = BinaryTree()
+    tree.root = Node(1)
+    tree.root.left = Node(50)
+    tree.root.left.left = Node(7)
+    tree.root.left.right = Node(96)
+    tree.root.left.right.left = Node(3)
+    tree.root.left.right.right = Node(11)
+    tree.root.right = Node(2)
+    tree.root.right.right = Node(1)
+    assert tree.max_value() ==  96
