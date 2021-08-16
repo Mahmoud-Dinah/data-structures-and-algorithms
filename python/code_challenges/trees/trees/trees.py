@@ -43,22 +43,8 @@ class BinaryTree:
                 output = self.post_order(start.right,output)
                 output += f"{str(start.value)}  "
             return output
-
-    def arr_of_values(self):
-            max=0
-            def inner_def(current):
-                nonlocal max
-                if current.value > max :
-                    max = current.value
-
-                if current.left:
-                    inner_def(current.left)
-                if current.right:
-                    inner_def(current.right)
-
-            inner_def(self.root)
-            return max
-
+    def max_value():
+        pass
 class BinarySearchTree(BinaryTree):
     def Add(self,value):
             if self.root == None:
