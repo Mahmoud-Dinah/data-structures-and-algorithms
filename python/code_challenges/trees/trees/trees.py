@@ -43,8 +43,22 @@ class BinaryTree:
                 output = self.post_order(start.right,output)
                 output += f"{str(start.value)}  "
             return output
-    def max_value():
-        pass
+    def max_value(self):
+            max_number=0
+            def inner_def(current):
+                nonlocal max_number
+                if current.value > max_number :
+                    max_number = current.value
+
+                if current.left:
+                    inner_def(current.left)
+                if current.right:
+                    inner_def(current.right)
+
+            inner_def(self.root)
+            return max_number
+
+
 class BinarySearchTree(BinaryTree):
     def Add(self,value):
             if self.root == None:
@@ -104,3 +118,5 @@ if __name__ == "__main__":
     print(tree.root.value)
     print(tree.root.left.value)
     print(tree.root.right.value)
+    print ("Max value is :")
+    print(tree.max_value())
