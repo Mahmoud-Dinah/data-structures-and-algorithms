@@ -36,6 +36,13 @@ Returns: boolean indicating whether or not the value is in the tree at least onc
 
 ------------------------------------------------------
 
+# Tree Fizz Buzz:
+
+1[treeFizzBuzz](tree_fizz_buzz.PNG)
+
+## PR Link: https://github.com/Mahmoud-Dinah/data-structures-and-algorithms/pull/35
+---------------------------------
+
 resource:
 
 - https://www.geeksforgeeks.org/find-maximum-or-minimum-in-binary-tree/
