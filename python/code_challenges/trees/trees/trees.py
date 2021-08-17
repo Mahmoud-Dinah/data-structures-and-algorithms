@@ -111,6 +111,21 @@ class BinarySearchTree(BinaryTree):
                         temp.left = Node(value)
                         break
 
+    def Contains(self,value):
+            global current
+            current = self.root
+            while current:
+                if value == current.value:
+                    print("The value in the tree")
+                    return True
+                elif value > current.value:
+                    current = current.right
+
+                elif value < current.value:
+                    current = current.left
+
+            return False
+
 
 def breadth_first(tree):
     queue = [tree.root]
