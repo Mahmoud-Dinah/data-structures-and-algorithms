@@ -1,5 +1,6 @@
 from trees.trees import *
 
+
 def test_instantiate_an_empty_tree():
     tree = BinarySearchTree()
     treeBinary = BinaryTree()
@@ -53,3 +54,6 @@ def test_breadthFirst_result():
     tree.root.right.right = Node(9)
     tree.root.right.right.left = Node(4)
     assert breadth_first(tree) == [2, 7, 5, 2, 6, 9, 5, 11, 4]
+
+
+
