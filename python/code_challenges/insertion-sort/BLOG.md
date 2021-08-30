@@ -1,26 +1,24 @@
-## Problem domain:
+## Insertion Sort:
+**The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part.**
 
-Create a function called insertionSort that take an array as arg. and sort it ascending
+--------------------------------
 
-## algorithm:
+i = 1
 
-1- create a function called insertionSort that take an array as argument.
+![asd](i=1.PNG)
 
-2-create a for loop in range (1, arr length)
+i = 2
 
-3- while loop declare a var named key and equal it to arr[i]
+![asd](i=2.PNG)
 
-4- while loop declare a var called j and equal it to  i-1
+i = 3
 
-5- create a while loop inside the for loop while j > 0 and key < arr[j]
+![asd](i=3.PNG)
 
-6- let arr[j+1] =arr[j]
+i = 4
 
-7- j= j-1
+![asd](i=4.PNG)
 
-8- arr[j+1] = key
+i = 5
 
------------------------------------------------------
-## Whiteboard:
-
-![insertion-sort](insertion-sort.PNG)
+![asd](i=5.PNG)
