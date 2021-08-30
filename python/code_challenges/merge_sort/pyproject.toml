@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "stack-queue-pseudo"
+name = "merge_sort"
 version = "0.1.0"
 description = ""
 authors = ["mahmoud-dinah <mahmood.dinah2@gmail.com>"]
