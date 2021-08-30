@@ -30,14 +30,9 @@ def mergeSort(arr):
             arr[k] = R[j]
             j += 1
             k += 1
-
-def printList(arr):
-    for i in range(len(arr)):
-        print(arr[i], end=" ")
-    print()
-
+    return arr
 
 if __name__ == "__main__":
-    arr =[8,4,23,42,16,15]
-    mergeSort(arr)
-    printList(arr)
+    arr =[2,3,5,7,13,11]
+    print(mergeSort(arr))
+
