@@ -25,5 +25,5 @@ def quick_sort(start,end,arr):
     return arr
 
 if __name__ == "__main__":
-    arr = [8,4,23,42,16,15]
+    arr = [2,3,5,7,13,11]
     print (quick_sort(0, len(arr) - 1, arr))
