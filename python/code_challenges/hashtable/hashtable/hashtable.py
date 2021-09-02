@@ -25,11 +25,23 @@ class LinkedList:
             current = current.next
         return f'{output}'
 
-if __name__ == "__main__":
-    new =LinkedList()
-    new.insert('Mahmoud')
-    new.insert('is')
-    new.insert('name')
-    new.insert('my')
-    new.__str__()
-    print(new.__str__())
+class HsahTable:
+    def __init__(self, size = 1024):
+        self.size = size
+        self._buckets = [None] * self.size
+
+
+    def hash(self,key:str) -> int:
+        value = 0
+        for x in key:
+            value += ord(x)
+        index = (value * 7) % self.size
+        return index
+
+    def add(self,key,value):
+        index = self.hash(key)
+
+        if not self ._buckets[index]:
+            self ._buckets[index] = LinkedList()
+
+        self._buckets[index].append([key,value])
