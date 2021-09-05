@@ -56,7 +56,7 @@ class HsahTable:
                     return False
                 else:
                     current = current.next
-        return True
+        return False
 
 
     def get(self,key):
@@ -70,4 +70,7 @@ class HsahTable:
                 else:
                     current =current.next
 
-        return hashKey
+        return None
+
+    def repeated_word(words:str):
+        pass
