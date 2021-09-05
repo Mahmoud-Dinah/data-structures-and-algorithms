@@ -28,7 +28,7 @@ class LinkedList:
 class HsahTable:
     def __init__(self, size = 1024):
         self.size = size
-        self.map = [None] * self.size
+        self.bucckets = [None] * self.size
 
 
     def hash(self,key:str) -> int:
@@ -41,16 +41,16 @@ class HsahTable:
     def add(self,key,value):
         index = self.hash(key)
 
-        if not self.map[index]:
-            self.map[index] = LinkedList()
+        if not self.bucckets[index]:
+            self.bucckets[index] = LinkedList()
 
-        self.map[index].insert([key,value])
+        self.bucckets[index].insert([key,value])
 
     def contains(self,key):
         hashKey = self.hash(key)
-        if not self.map[hashKey]:
-            self.map[hashKey].head.value[0]
-            current=self.map[hashKey].head
+        if not self.bucckets[hashKey]:
+            self.bucckets[hashKey].head.value[0]
+            current=self.bucckets[hashKey].head
             while current:
                 if current.value[0] != key:
                     return False
@@ -61,9 +61,9 @@ class HsahTable:
 
     def get(self,key):
         hashKey = self.hash(key)
-        if not self.map[hashKey]:
-            self.map[hashKey].head.value[0]
-            current=self.map[hashKey].head
+        if not self.bucckets[hashKey]:
+            self.bucckets[hashKey].head.value[0]
+            current=self.bucckets[hashKey].head
             while current:
                 if current.value[0] == key:
                     return current.value[1]
