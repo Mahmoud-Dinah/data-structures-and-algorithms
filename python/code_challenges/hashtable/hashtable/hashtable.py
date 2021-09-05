@@ -21,14 +21,14 @@ class LinkedList:
         output = []
         current = self.head
         while current:
-            output.append(current.value)
+            output.insert(current.value)
             current = current.next
         return f'{output}'
 
 class HsahTable:
     def __init__(self, size = 1024):
         self.size = size
-        self._buckets = [None] * self.size
+        self.map = [None] * self.size
 
 
     def hash(self,key:str) -> int:
@@ -41,7 +41,41 @@ class HsahTable:
     def add(self,key,value):
         index = self.hash(key)
 
-        if not self ._buckets[index]:
-            self ._buckets[index] = LinkedList()
+        if not self.map[index]:
+            self.map[index] = LinkedList()
 
-        self._buckets[index].append([key,value])
+        self.map[index].insert([key,value])
+
+    def contains(self,key):
+        hashKey = self.hash(key)
+        if not self.map[hashKey]:
+            self.map[hashKey].head.value[0]
+            current=self.map[hashKey].head
+            while current:
+                if current.value[0] != key:
+                    return False
+                else:
+                    current = current.next
+        return True
+
+
+    def get(self,key):
+        hashKey = self.hash(key)
+        if not self.map[hashKey]:
+            self.map[hashKey].head.value[0]
+            current=self.map[hashKey].head
+            while current:
+                if current.value[0] == key:
+                    return current.value[1]
+                else:
+                    current =current.next
+
+        return hashKey
+
+
+if __name__ == '__main__':
+    hashtable = HsahTable()
+    hashtable.add('test get', 64)
+
+    print(hashtable.get('test get'))
+    print(hashtable.contains('test get'))
