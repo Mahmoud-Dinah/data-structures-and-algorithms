@@ -1,3 +1,6 @@
+from typing import Hashable
+
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -71,3 +74,46 @@ class HsahTable:
                     current =current.next
 
         return None
+
+class NodeNew:
+    def __init__(self,value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+class Binary_tree:
+    def __init__(self):
+        self.root = None
+
+def tree_intersection(first_tree,sec_tree):
+    hashed= HsahTable()
+    array =[]
+    def travers(node):
+        if hashed.contains(str(node.value)):
+            nonlocal array
+            array = array + [node.value]
+        else:
+            hashed.add(str(node.value),True)
+
+        if node.left:
+            travers(node.left)
+        if node.right:
+            travers(node.right)
+
+    travers(first_tree.root)
+    travers(sec_tree.root)
+
+    return array
+
+if __name__ == "__main__":
+    first_tree=Binary_tree()
+    first_tree.root=NodeNew(150)
+    first_tree.root.left=NodeNew(100)
+    first_tree.root.right=NodeNew(250)
+
+    sec_tree=Binary_tree()
+    sec_tree.root=NodeNew(42)
+    sec_tree.root.left=NodeNew(100)
+    sec_tree.root.right=NodeNew(600)
+    sec_tree.root.left.left=NodeNew(15)
+    print(tree_intersection(first_tree,sec_tree))
