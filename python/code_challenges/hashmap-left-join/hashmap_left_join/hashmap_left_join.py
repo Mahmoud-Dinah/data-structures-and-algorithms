@@ -72,7 +72,24 @@ class HsahTable:
 
         return None
 
-def left_join():
-    pass
+def left_join(hash_one,hash_two):
+    array = []
+    for index in hash_one.bucckets:
+        if index:
+            array_Two=[]
+            array_Two.append(index.head.value[0])
+            array_Two.append(hash_one.get(index.head.value[0]))
+            array_Two.append(hash_two.get(index.head.value[0]))
+            array.append(array_Two)
+    return array
 if __name__ == "__main__":
-    pass
+    hash_one = HsahTable()
+    hash_one.add('test', 'roll')
+    hash_one.add('qwe', 'in')
+    hash_one.add('qwe', 'in')
+    hash_one.add('qwe', 'in')
+    hash_two = HsahTable()
+    hash_two.add('black', 'teset')
+    hash_two.add('in', 'roll')
+    hash_two.add('in', 'in')
+    print(left_join(hash_one,hash_two))
