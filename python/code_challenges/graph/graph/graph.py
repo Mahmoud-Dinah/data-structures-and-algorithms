@@ -40,20 +40,31 @@ class Graph:
             return None
         return array
 
-    def get_neighbors(self):
-         pass
+    def get_neighbors(self,node):
+        array = []
+        if node in self.adjacency_list :
+             for edge in self.adjacency_list[node]:
+                 array.append((edge.vertix, edge.weight))
+             return array
 
-    def to_adj_list(self):
-        return self.adjacency_list
+    def size(self):
+        return len(self.adjacency_list.keys())
 
-    def _breadthFirst(self, action=lambda x: print(x)):
-        pass
+    def __str__(self):
+        output = ''
+        for vertix in self.adjacency_list.keys():
+            output += vertix.value
+            for edge in self.adjacency_list[vertix]:
+                output += ' -> ' + edge.vertix.value
+                output += '\n'
+        return output
 
 
 if __name__ == "__main__":
     graph = Graph()
-    a = graph.add_vertix('a')
-    b = graph.add_vertix('b')
-    graph.add_edges(a, b)
-    print(graph.get_nodes())
-    print(graph.adjacency_list)
+    first = graph.add_vertix('first')
+    second = graph.add_vertix('second')
+    third = graph.add_vertix('third')
+    graph.get_nodes()
+
+    # print(graph.get_nodes())
