@@ -35,4 +35,4 @@
  * Arguments: none
  * Returns the total number of nodes in the graph
 
-![PR]()
+## [PR](https://github.com/Mahmoud-Dinah/data-structures-and-algorithms/pull/49)
