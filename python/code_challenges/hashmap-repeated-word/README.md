@@ -17,3 +17,8 @@
 
 Time--> O(n)
 space--> O(n)
+
+
+## whiteboard
+
+![repeated](repeated.PNG)
