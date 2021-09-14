@@ -10,4 +10,4 @@ Write the following method for the Graph class:
 
 ## whiteboard
 
-![depth_f](depth_f)
+![depth_f](depth_f.PNG)

@@ -61,11 +61,32 @@ class Graph:
 
     def depth_first(self,start_point):
         if start_point not in self.adjacency_list.keys():
-            return ' no such root in selected graph'
+            return ' no such path in selected root'
 
 
+        value = []
+        def recursive(node):
+            if not node in value:
+                value.append(node)
+            for nodes in self.get_neighbors(node):
+                if not nodes[0] in value:
+                    recursive(nodes[0])
 
-
+        recursive(start_point)
+        return value
 
 if __name__ == "__main__":
     graph = Graph()
+    a= graph.add_vertix('1')
+    b= graph.add_vertix('2')
+    c= graph.add_vertix('3')
+    graph.add_edges(a,b)
+    graph.add_edges(b,a)
+    graph.add_edges(b,c)
+    # print(graph.depth_first(a)[0])
+    print(graph.depth_first(a))
+
+
+    graph1 = Graph()
+    test=Vertix('test')
+    print(graph.depth_first(test))
