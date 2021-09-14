@@ -1,5 +1,64 @@
-from graph_business_trip import __version__
+from graph_business_trip.graph_business_trip import *
 
 
-def test_version():
-    assert __version__ == '0.1.0'
+def test_happy_path_true():
+    graph = Graph()
+
+    New_Monstropolis= graph.add_vertix('New Monstropolis')
+    pandora= graph.add_vertix('pandora')
+    naboo= graph.add_vertix('naboo')
+    metroville= graph.add_vertix('metroville')
+    narina= graph.add_vertix('narina')
+    arendelle= graph.add_vertix('arendelle')
+    manstropolis= graph.add_vertix('manstropolis')
+    graph.add_edges(pandora,metroville,82)
+    graph.add_edges(arendelle,metroville,99)
+    graph.add_edges(metroville,manstropolis,105)
+    graph.add_edges(arendelle,manstropolis,42)
+    graph.add_edges(metroville,pandora,82)
+    graph.add_edges(arendelle,pandora,150)
+    graph.add_edges(pandora,arendelle,150)
+    graph.add_edges(metroville,arendelle,99)
+    graph.add_edges(metroville,narina,37)
+    graph.add_edges(narina,metroville,37)
+    graph.add_edges(naboo,manstropolis,73)
+    graph.add_edges(naboo,narina,250)
+    graph.add_edges(naboo,metroville,26)
+    graph.add_edges(metroville,naboo,26)
+    graph.add_edges(manstropolis,naboo,73)
+    graph.add_edges(narina,naboo,250)
+    graph.add_edges(manstropolis,arendelle,42)
+    graph.add_edges(manstropolis,metroville,105)
+    assert business_trip(graph,[metroville,narina]) == (True, '$37')
+
+
+
+def test_happy_path_false():
+    graph = Graph()
+
+    New_Monstropolis= graph.add_vertix('New Monstropolis')
+    pandora= graph.add_vertix('pandora')
+    naboo= graph.add_vertix('naboo')
+    metroville= graph.add_vertix('metroville')
+    narina= graph.add_vertix('narina')
+    arendelle= graph.add_vertix('arendelle')
+    manstropolis= graph.add_vertix('manstropolis')
+    graph.add_edges(pandora,metroville,82)
+    graph.add_edges(arendelle,metroville,99)
+    graph.add_edges(metroville,manstropolis,105)
+    graph.add_edges(arendelle,manstropolis,42)
+    graph.add_edges(metroville,pandora,82)
+    graph.add_edges(arendelle,pandora,150)
+    graph.add_edges(pandora,arendelle,150)
+    graph.add_edges(metroville,arendelle,99)
+    graph.add_edges(metroville,narina,37)
+    graph.add_edges(narina,metroville,37)
+    graph.add_edges(naboo,manstropolis,73)
+    graph.add_edges(naboo,narina,250)
+    graph.add_edges(naboo,metroville,26)
+    graph.add_edges(metroville,naboo,26)
+    graph.add_edges(manstropolis,naboo,73)
+    graph.add_edges(narina,naboo,250)
+    graph.add_edges(manstropolis,arendelle,42)
+    graph.add_edges(manstropolis,metroville,105)
+    assert business_trip(graph,[naboo,pandora]) == (False, '$0')

@@ -50,9 +50,7 @@ class Graph:
     def size(self):
         return len(self.adjacency_list.keys())
 
-    def business_trip(graph,route_map):
-        for i in range(len(route_map)-1):
-            pass
+
 
     def __str__(self):
         output = ''
@@ -63,6 +61,48 @@ class Graph:
                 output += '\n'
         return output
 
+def business_trip(graph,cities):
+        cost = 0
+        fly = True
+        for i in range(len(cities)-1):
+            for city in graph.get_neighbors(cities[i]):
+                if cities[i+1] == city[0]:
+                    cost+=city[1]
+                    break
+            else:
+                fly = False
+        if fly==False:
+            cost=0
+
+        return fly, f'${cost}'
+
 
 if __name__ == "__main__":
-    pass
+    graph = Graph()
+
+    New_Monstropolis= graph.add_vertix('New Monstropolis')
+    pandora= graph.add_vertix('pandora')
+    naboo= graph.add_vertix('naboo')
+    metroville= graph.add_vertix('metroville')
+    narina= graph.add_vertix('narina')
+    arendelle= graph.add_vertix('arendelle')
+    manstropolis= graph.add_vertix('manstropolis')
+    graph.add_edges(pandora,metroville,82)
+    graph.add_edges(arendelle,metroville,99)
+    graph.add_edges(metroville,manstropolis,105)
+    graph.add_edges(arendelle,manstropolis,42)
+    graph.add_edges(metroville,pandora,82)
+    graph.add_edges(arendelle,pandora,150)
+    graph.add_edges(pandora,arendelle,150)
+    graph.add_edges(metroville,arendelle,99)
+    graph.add_edges(metroville,narina,37)
+    graph.add_edges(narina,metroville,37)
+    graph.add_edges(naboo,manstropolis,73)
+    graph.add_edges(naboo,narina,250)
+    graph.add_edges(naboo,metroville,26)
+    graph.add_edges(metroville,naboo,26)
+    graph.add_edges(manstropolis,naboo,73)
+    graph.add_edges(narina,naboo,250)
+    graph.add_edges(manstropolis,arendelle,42)
+    graph.add_edges(manstropolis,metroville,105)
+    print(business_trip(graph,[metroville,narina]))
